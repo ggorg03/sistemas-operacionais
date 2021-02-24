@@ -28,8 +28,9 @@ int main(void){
     float b;
     int qtd_threads;
     int qtd_trpz;
-    void* thread_return;
     float area = 0;
+    int status;
+    void* thread_return;
     // inicializando variaveis
     a = 0;
     b = 10;
@@ -44,7 +45,10 @@ int main(void){
     // rodando threads
     for (int i = 0; i < qtd_threads; i++){
         float entradas[] = {a + i*h, a + (i + 1)*h, trpz_por_thread};
-        pthread_create(&threads[i], NULL, calcula_area_sobcurva, (void*) entradas);
+        status = pthread_create(&threads[i], NULL, calcula_area_sobcurva, (void*) entradas);
+        if(status != 0){
+            printf("Erro na criacao da thread. Codigo do erro: %d", status);
+        }
     }
     // coletando o resultado de cada thread e acumulando o valor na variavel 'area'
     for (int i = 0; i < qtd_threads; i++) {
