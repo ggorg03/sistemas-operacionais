@@ -10,10 +10,6 @@ typedef struct{
     float area;
 } Args;
 
-typedef struct{
-    float resultado;
-} Saida;
-
 int f_a (float x){
     return 5;
 }
@@ -74,8 +70,8 @@ void teste_fa(){
     // teste funcao A
     a = 0;
     b = 10;
-    qtd_trpz = 20;
-    qtd_threads = 10;
+    qtd_trpz = 120;
+    qtd_threads = 6;
     printf("Rodando função f1 com a = %f, b = %f, %d trapezios e %d threads\n", a, b, qtd_trpz, qtd_threads);
     // calculando quantidade de trapezios por tread
     int trpz_por_thread = qtd_trpz / qtd_threads;
@@ -128,8 +124,8 @@ void teste_fb(){
     // teste funcao A
     a = 0;
     b = 2 * pi;
-    qtd_trpz = 20;
-    qtd_threads = 10;
+    qtd_trpz = 120;
+    qtd_threads = 6;
     printf("Rodando função f2 com a = %f, b = %f * pi, %d trapezios e %d threads\n", a, b / pi, qtd_trpz, qtd_threads);
     // calculando quantidade de trapezios por tread
     int trpz_por_thread = qtd_trpz / qtd_threads;
