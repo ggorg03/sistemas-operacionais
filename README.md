@@ -1,7 +1,9 @@
 # sistemas-operacionais
 
 ## compilar via terminal
-  gcc main.c -o main -pthread -lm
+    vá para o diretorio tarefa-1.2 e então rode o seguinte comando no terminal
+    gcc main.c -o main -pthread -lm
 
 ## para rodar
-  ./main
+    ainda no diretorio tarefa-1.2 rode o seguinte comando
+    ./main
